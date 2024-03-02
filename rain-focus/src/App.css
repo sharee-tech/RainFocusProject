@@ -1,4 +1,108 @@
-.App {
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1%;
+}
+/* -------------------- Header --------------------*/
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header-row > * {
+  width: 100%;
+  padding: 1rem;
+}
+.header-row > .left-sidebar {
+  background: #f5d55f;
+}
+.header-row > .main-content {
+  background-color: #fff;
+}
+.header-row > .right-sidebar {
+  background: #c5ed77;
+}
+
+button {
+  background: #5c00dc;
+  width: 101px;
+  height: 33px;
+  padding: 8px, 16px, 8px, 16px;
+  border-radius: 4px;
+  gap: 10px;
+  color: white;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .header-row > .left-sidebar,
+  .header-row > .right-sidebar {
+    width: 50%;
+  }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .header-row > .left-sidebar {
+    /* left sidebar second (first in second row) */
+    order: -1;
+  }
+  .header-row > .main-content {
+    width: 80%;
+  }
+  .header-row > .left-sidebar {
+    width: 10%;
+  }
+  .header-row > .right-sidebar {
+    width: 10%;
+  }
+}
+
+/* -------------------- Step 1: --------------------*/
+.step-one {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step-one > div {
+  flex: 25%;
+  padding: 10px;
+}
+@media screen and (max-width: 992px) {
+  .step-one > div {
+    flex: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+/* see this link: https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_flex */
+@media screen and (max-width: 600px) {
+  .step-one {
+    min-height: fit-content;
+  }
+  .step-one > div {
+    /* flex-direction: column; */
+    flex: 100%;
+  }
+}
+
+/* -------------------- Step 2: --------------------*/
+.step-two {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid green;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+
+.step-two > div {
+  padding: 10px;
+  min-height: 100px;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +139,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
