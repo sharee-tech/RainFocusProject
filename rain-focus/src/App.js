@@ -99,7 +99,11 @@ function StepOne() {
         <b>Step: 1 </b>Base settings.
       </p>
       <div className="step-one" style={{ border: "1px solid purple" }}>
-        <div>1</div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          consectetur est urna, at auctor felis eleifend sit amet. Donec lacinia
+          euismod lectus vitae porttitor.
+        </div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
@@ -116,7 +120,7 @@ function StepTwo() {
       </p>
       <div className="step-two">
         <div>Clara is so happy to go outside and play</div>
-        <div>Andrew is so happy to go outside and play</div>
+        <div>Clara is so happy to go outside and play</div>
         <div>David is so happy to go outside and play</div>
         <div>David is so happy to go outside and play</div>
       </div>
@@ -139,12 +143,25 @@ function StepThree() {
 function StepFour() {
   return (
     <>
+      <p>
+        <b>Step: 4 </b>Build your exhibitor platform.
+      </p>
       <div className="step-four">
-        <div class="item item--1">1</div>
-        <div class="item item--2">2</div>
-        <div class="item item--3">3</div>
-        <div class="item item--4">4</div>
-        <div class="item item--5">5</div>
+        <div class="item item--1">
+          <div>Red</div>
+        </div>
+        <div class="item item--2">
+          <div>Orange</div>
+        </div>
+        <div class="item item--3">
+          <div>Yellow</div>
+        </div>
+        <div class="item item--4">
+          <div>Green</div>
+        </div>
+        <div class="item item--5">
+          <div>Blue</div>
+        </div>
       </div>
     </>
   );
