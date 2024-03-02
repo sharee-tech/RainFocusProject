@@ -57,17 +57,10 @@ function App() {
               </h3>
             </div>
           </section>
-          <section>
-            <p>
-              <b>Step: 1 </b>Base settings.
-            </p>
-          </section>
-          <section>
-            <StepOne />
-          </section>
-          <section>
-            <StepTwo />
-          </section>
+          <StepOne />
+          <StepTwo />
+          <StepThree />
+          <StepFour />
         </main>
       </body>
     </>
@@ -102,6 +95,9 @@ function Header() {
 function StepOne() {
   return (
     <>
+      <p>
+        <b>Step: 1 </b>Base settings.
+      </p>
       <div className="step-one" style={{ border: "1px solid purple" }}>
         <div>1</div>
         <div>2</div>
@@ -115,11 +111,40 @@ function StepOne() {
 function StepTwo() {
   return (
     <>
+      <p>
+        <b>Step: 2 </b>Build registration workflows.
+      </p>
       <div className="step-two">
         <div>Clara is so happy to go outside and play</div>
         <div>Andrew is so happy to go outside and play</div>
         <div>David is so happy to go outside and play</div>
         <div>David is so happy to go outside and play</div>
+      </div>
+    </>
+  );
+}
+
+function StepThree() {
+  return (
+    <>
+      <p>
+        <b>Step: 3 </b>Design attendee experiences.
+      </p>
+      <div className="step-three">
+        <div>Clara is so happy to go outside and play</div>
+      </div>
+    </>
+  );
+}
+function StepFour() {
+  return (
+    <>
+      <div className="step-four">
+        <div class="item item--1">1</div>
+        <div class="item item--2">2</div>
+        <div class="item item--3">3</div>
+        <div class="item item--4">4</div>
+        <div class="item item--5">5</div>
       </div>
     </>
   );
