@@ -57,10 +57,41 @@ function App() {
               </h3>
             </div>
           </section>
-          <StepOne />
-          <StepTwo />
-          <StepThree />
-          <StepFour />
+          <p>
+            <b>Step: 1 </b>Base settings.
+          </p>
+          <div>
+            <StepOne />
+          </div>
+          <p>
+            <b>Step: 2 </b>Build registration workflows.
+          </p>
+          <div className="card-tile" style={{ border: "1px solid purple" }}>
+            <CardTile /> <CardTile /> <CardTile /> <CardTile />
+          </div>
+          <p>
+            <b>Step: 3 </b>Design attendee experiences.
+          </p>
+          <div className="card-tile" style={{ border: "1px solid purple" }}>
+            <CardTile />
+          </div>
+          <p>
+            <b>Step: 4 </b>Build your exhibitor platform.
+          </p>
+          <div className="step-four-1">
+            <div className="card-tile-2">
+              <CardTile /> <CardTile />
+            </div>
+          </div>
+          <div className="step-four-2">
+            <div className="card-tile">
+              <CardTile /> <CardTile /> <CardTile />
+            </div>
+          </div>
+
+          {/* <StepTwo /> */}
+          {/* <StepThree /> */}
+          {/* <StepFour /> */}
         </main>
       </body>
     </>
@@ -92,18 +123,27 @@ function Header() {
   );
 }
 
+function CardTile() {
+  return (
+    <>
+      <div>
+        <div className="card-title">
+          <img src={logo} width="20px" />
+          <h5>Attendee Registration</h5>
+        </div>
+        <div>
+          <p>Start by creating a general registration workflow</p>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function StepOne() {
   return (
     <>
-      <p>
-        <b>Step: 1 </b>Base settings.
-      </p>
       <div className="step-one" style={{ border: "1px solid purple" }}>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          consectetur est urna, at auctor felis eleifend sit amet. Donec lacinia
-          euismod lectus vitae porttitor.
-        </div>
+        <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
@@ -112,21 +152,21 @@ function StepOne() {
   );
 }
 
-function StepTwo() {
-  return (
-    <>
-      <p>
-        <b>Step: 2 </b>Build registration workflows.
-      </p>
-      <div className="step-two">
-        <div>Clara is so happy to go outside and play</div>
-        <div>Clara is so happy to go outside and play</div>
-        <div>David is so happy to go outside and play</div>
-        <div>David is so happy to go outside and play</div>
-      </div>
-    </>
-  );
-}
+// function StepTwo() {
+//   return (
+//     <>
+//       <p>
+//         <b>Step: 2 </b>Build registration workflows.
+//       </p>
+//       <div className="step-two">
+//         <div>1</div>
+//         <div>2</div>
+//         <div>3</div>
+//         <div>4</div>
+//       </div>
+//     </>
+//   );
+// }
 
 function StepThree() {
   return (

@@ -60,7 +60,9 @@ button {
   }
 }
 
-/* -------------------- Step 1: --------------------*/
+/* -------------------- CardTile --------------------*/
+
+/* -------------------- Step 1 --------------------- */
 .step-one {
   display: flex;
   flex-wrap: wrap;
@@ -90,27 +92,49 @@ button {
 }
 
 /* -------------------- Step 2: --------------------*/
-.step-two {
+
+.card-tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-tile > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 0.2em;
+}
+
+p {
+  font-size: 0.5em;
+}
+
+.card-title {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .card-tile {
+    grid-template-columns: 1fr;
+  }
+}
+/* .step-two {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid green;
+  gap: 1rem;
   justify-content: space-between;
-  align-items: center;
   min-height: 100px;
 }
 
 .step-two > div {
-  /* padding: 10px;
-  min-height: 100px;
-  
-  
-  flex-grow: 1 0 33.33%;
-   */
-  margin: 10px 10px 10px 10px;
   background-color: pink;
-  padding: 10px;
+  width: 33%;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
   min-height: 100px;
-}
+} */
 
 /* -------------------- Step 3: --------------------*/
 .step-three {
@@ -130,51 +154,34 @@ button {
   flex-grow: 1 0 33.33%;
 }
 /* -------------------- Step 4: --------------------*/
-.step-four {
-  background-color: #eee;
-  /* width: 1024px; */
-  min-height: 200px;
-  display: flex;
-  flex-wrap: wrap;
+.step-four-1 {
+  background-color: gray;
+  display: grid;
+}
+.step-four-1 > div {
+  border-color: white;
+  background-color: gray;
+  color: white;
 }
 
-.item {
+.card-tile-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-tile-2 > div {
   padding: 10px;
-  display: flex;
-  flex-basis: calc(50% - 14px);
-  justify-content: center;
-  flex-direction: column;
-  margin: 10px 0 10px 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 0.2em;
 }
 
-.item:nth-last-child(-n + 3) {
-  display: flex;
-  margin-top: 0px;
-  flex-basis: calc(33.33% - 13px);
-  justify-content: center;
-  flex-direction: column;
+.step-four-2 {
+  background-color: gray;
+  display: grid;
 }
-
-.item > div {
-  display: flex;
-  justify-content: start;
+.step-four-2 > div {
+  border-color: white;
+  background-color: gray;
+  color: white;
 }
-
-.item--1 {
-  background-color: red;
-}
-.item--2 {
-  background-color: orange;
-}
-.item--3 {
-  background-color: yellow;
-}
-.item--4 {
-  background-color: green;
-}
-.item--5 {
-  background-color: blue;
-}
-
-/* .step-four > div {
-} */
