@@ -14,6 +14,18 @@ function App() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           crossorigin="anonymous"
         />
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Inter&display=swap')
+        </style>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap')
+        </style>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap')
+        </style>
         <title>RainFocus Summit</title>
       </head>
       <body>
@@ -23,10 +35,10 @@ function App() {
         <main>
           <section>
             <h2>Event setup guide</h2>
-            <p>
+            <h4>
               See the available list of modules below. We suggest that you start
               with the attendee module.
-            </p>
+            </h4>
           </section>
           <section>
             <hr></hr>
@@ -55,9 +67,9 @@ function App() {
               </h3>
             </div>
           </section>
-          <p>
+          <h5>
             <b>Step: 1 </b>Base settings.
-          </p>
+          </h5>
           <div className="step-one">
             <BaseTile
               title="General"
@@ -75,9 +87,9 @@ function App() {
             />
             <BaseTile title="" body="" />
           </div>
-          <p>
+          <h5>
             <b>Step: 2 </b>Build registration workflows.
-          </p>
+          </h5>
           <div className="card-tile tile--2">
             <CardTile
               icon="logic-arrow.png"
@@ -102,9 +114,9 @@ function App() {
             />
           </div>
 
-          <p>
+          <h5>
             <b>Step: 3 </b>Design attendee experiences.
-          </p>
+          </h5>
           <div className="card-tile tile--3">
             <CardTile
               icon="computer.png"
@@ -112,18 +124,18 @@ function App() {
               body="Manage the portal that attendees will see after they’ve register for your event."
             />
           </div>
-          <p>
+          <h5>
             <b>Step: 4 </b>Build your exhibitor platform.
-          </p>
+          </h5>
           <div className="step-four-1">
             <div className="card-tile-2">
               <CardTile
-                icon="computer.png"
+                icon="computer-white.png"
                 title="Exhibitor Portal"
                 body="Manage the portal that attendees will see after they’ve register for your event."
               />
               <CardTile
-                icon="computer.png"
+                icon="computer-white.png"
                 title="Exhibitor List"
                 body="Manage the portal that attendees will see after they’ve register for your event."
               />
@@ -132,17 +144,17 @@ function App() {
           <div className="step-four-2">
             <div className="card-tile-3">
               <CardTile
-                icon="computer.png"
+                icon="computer-white.png"
                 title="Exhibitor Logos"
                 body="Manage the portal that attendees will see after they’ve register for your event."
               />
               <CardTile
-                icon="computer.png"
+                icon="computer-white.png"
                 title="Exhibitor Tasks"
                 body="Manage the portal that attendees will see after they’ve register for your event."
               />
               <CardTile
-                icon="computer.png"
+                icon="computer-white.png"
                 title="Exhibitor Forms"
                 body="Manage the portal that attendees will see after they’ve register for your event."
               />
@@ -167,9 +179,9 @@ function Header() {
         </div>
         <div className="main-content">
           <h1>RainFocus Summit</h1>
-          <h5>
+          <h4>
             December 15th<br></br>Lehi, Utah
-          </h5>
+          </h4>
         </div>
         <div className="right-sidebar">
           <button>Edit Event</button>
@@ -183,7 +195,7 @@ function BaseTile({ title, body }) {
     <>
       <div>
         <div>
-          <b>{title}</b>
+          <h6>{title}</h6>
         </div>
         <div>
           <p>{body}</p>
@@ -198,7 +210,7 @@ function CardTile({ icon, title, body, style1, style2 }) {
       <div className={style1}>
         <div className={style2 ? `card-title ${style2}` : "card-title"}>
           <img src={`images/${icon}`} width="20px" />
-          <h5>{title}</h5>
+          <h6>{title}</h6>
         </div>
         <div>
           <p>{body}</p>
@@ -240,9 +252,9 @@ function StepOne() {
 function StepThree() {
   return (
     <>
-      <p>
+      <h5>
         <b>Step: 3 </b>Design attendee experiences.
-      </p>
+      </h5>
       <div className="step-three">
         <div>Clara is so happy to go outside and play</div>
       </div>
@@ -252,9 +264,9 @@ function StepThree() {
 function StepFour() {
   return (
     <>
-      <p>
+      <h5>
         <b>Step: 4 </b>Build your exhibitor platform.
-      </p>
+      </h5>
       <div className="step-four">
         <div class="item item--1">
           <div>Red</div>

@@ -1,3 +1,7 @@
+// @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -6,6 +10,94 @@
 body {
   padding: 2%;
 }
+
+$color-primary: #000000;
+$color-text: #222222;
+$color-gray: #cccccc;
+$color-white: #ffffff;
+$color-accent: #5c00dc;
+$color-background: #393551;
+$color-line: #bbbbbb;
+
+$regular-weight: 400;
+$semibold-weight: 600;
+$bold-weight: 700;
+
+@font-face {
+  font-family: "Inter";
+  font-weight: $regular-weight;
+  font-style: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: $semibold-weight;
+  font-style: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: $bold-weight;
+  font-style: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+}
+
+h1 {
+  font-family: "Inter";
+  font-weight: $semibold-weight;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+h2 {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: $semibold-weight;
+  line-height: 29px;
+}
+
+h3 {
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: $semibold-weight;
+  line-height: 24px;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: $regular-weight;
+  font-size: 16px;
+  line-height: 19.36px;
+}
+
+h5 {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: $semibold-weight;
+  line-height: 16.94px;
+}
+
+h6 {
+  font-family: "Inter";
+  font-size: 13px;
+  font-weight: $bold-weight;
+  line-height: 14.52px;
+}
+
+p {
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: $regular-weight;
+  line-height: 14.52px;
+}
+
+hr {
+  height: 1px;
+  background-color: $color-line;
+}
+
 /* -------------------- Header --------------------*/
 .header-row {
   display: flex;
@@ -23,13 +115,22 @@ body {
 }
 
 button {
-  background: #5c00dc;
+  background: $color-accent;
   width: 101px;
   height: 33px;
   padding: 8px, 16px;
   border-radius: 4px;
   gap: 10px;
-  color: white;
+  color: $color-white;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: $semibold-weight;
+  line-height: 17px;
+  border: $color-accent;
+
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
 }
 
 /* Mobile Centering */
@@ -79,7 +180,7 @@ button {
 .step-one {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid gray;
+  border: 1px solid $color-gray;
   border-radius: 0.2em;
 }
 
@@ -138,12 +239,8 @@ button {
 .card-tile > div {
   padding: 10px;
   /* margin: 10px; */
-  border: 1px solid #999;
+  border: 1px solid $color-gray;
   border-radius: 0.2em;
-}
-
-p {
-  font-size: 0.5em;
 }
 
 @media screen and (max-width: 600px) {
@@ -161,14 +258,14 @@ p {
 }
 /* -------------------- Step 4: --------------------*/
 .step-four-1 {
-  background-color: gray;
+  background-color: $color-background;
   display: grid;
   border-radius: 4px 4px 0 0;
 }
 .step-four-1 > div {
-  border-color: white;
-  background-color: gray;
-  color: white;
+  border-color: $color-gray;
+  background-color: $color-background;
+  color: $color-white;
   border-radius: 4px 4px 0 0;
 }
 
@@ -178,21 +275,24 @@ p {
 }
 
 .card-tile-2 > div {
+  border-color: $color-gray;
+  background-color: $color-background;
+  color: $color-white;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #999;
+  border: 1px solid $color-gray;
   border-radius: 0.2em;
 }
 
 .step-four-2 {
-  background-color: gray;
+  background-color: $color-background;
   display: grid;
   border-radius: 0 0 4px 4px;
 }
 .step-four-2 > div {
-  border-color: white;
-  background-color: gray;
-  color: white;
+  border-color: $color-white;
+  background-color: $color-background;
+  color: $color-white;
   border-radius: 0 0 4px 4px;
 }
 .card-tile-3 {
@@ -202,7 +302,7 @@ p {
 .card-tile-3 > div {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #999;
+  border: 1px solid $color-gray;
   border-radius: 0.2em;
 }
 
