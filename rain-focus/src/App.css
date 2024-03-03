@@ -13,16 +13,14 @@ body {
 }
 .header-row > * {
   width: 100%;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 .header-row > .left-sidebar {
-  background: #f5d55f;
 }
 .header-row > .main-content {
   background-color: #fff;
 }
 .header-row > .right-sidebar {
-  background: #c5ed77;
 }
 
 button {
@@ -33,6 +31,7 @@ button {
   border-radius: 4px;
   gap: 10px;
   color: white;
+  float: right;
 }
 
 /* tablet breakpoint */
@@ -60,18 +59,17 @@ button {
   }
 }
 
-/* -------------------- CardTile --------------------*/
-
 /* -------------------- Step 1 --------------------- */
 .step-one {
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid gray;
+  border-radius: 0.2em;
 }
 
 .step-one > div {
   flex: 22%;
   padding: 10px;
-  background-color: lightseagreen;
   margin: 10px;
 }
 @media screen and (max-width: 992px) {
@@ -90,17 +88,40 @@ button {
     flex: 100%;
   }
 }
+/* -------------------- CardTile --------------------*/
+.center {
+  text-align: center;
+}
 
-/* -------------------- Step 2: --------------------*/
+.no-flex {
+  display: inline;
+}
 
 .card-tile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card-title {
+  display: flex;
+}
+
+.card-title.no-flex {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .card-tile > div {
   padding: 10px;
-  margin: 10px;
+  /* margin: 10px; */
   border: 1px solid #999;
   border-radius: 0.2em;
 }
@@ -109,49 +130,18 @@ p {
   font-size: 0.5em;
 }
 
-.card-title {
-  display: flex;
-}
-
 @media screen and (max-width: 600px) {
   .card-tile {
     grid-template-columns: 1fr;
   }
 }
-/* .step-two {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid green;
-  gap: 1rem;
-  justify-content: space-between;
-  min-height: 100px;
-}
 
-.step-two > div {
-  background-color: pink;
-  width: 33%;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  min-height: 100px;
-} */
+/* -------------------- Step 2: --------------------*/
+.card-tile.tile--3 {
+}
 
 /* -------------------- Step 3: --------------------*/
-.step-three {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid blue;
-  /* justify-content: space-between;
-  align-items: center; */
-  min-height: 100px;
-}
-
-.step-three > div {
-  padding: 10px;
-  min-height: 100px;
-  background-color: blue;
-  margin: 10px 0 10px 10px;
-  flex-grow: 1 0 33.33%;
+.card-tile.tile--3 {
 }
 /* -------------------- Step 4: --------------------*/
 .step-four-1 {
@@ -184,4 +174,14 @@ p {
   border-color: white;
   background-color: gray;
   color: white;
+}
+.card-tile-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-tile-3 > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 0.2em;
 }

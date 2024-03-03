@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import logo from "./rain-focus-logo.png";
-import person from "./person-portal.png";
+// import logo from "./rain-focus-logo.png";
+// import person from "./person-portal.png";
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
             <hr></hr>
             <div style={{ display: "inline-block", verticalAlign: "middle" }}>
               <img
-                src={person}
+                src="images/person-portal.png"
                 alt="Person Portal Image"
                 style={{ width: "35px", display: "inline-block" }}
               />
@@ -60,54 +60,112 @@ function App() {
           <p>
             <b>Step: 1 </b>Base settings.
           </p>
-          <div>
-            <StepOne />
+          <div className="step-one">
+            <BaseTile
+              title="General"
+              body="Define Attendee types & attributes"
+            />{" "}
+            <BaseTile
+              title="Title"
+              body="Description that explains the value goes here. Description that
+              explains the value goes here."
+            />{" "}
+            <BaseTile
+              title="General"
+              body="Description that explains the value goes here. Description that
+              explains the value goes here."
+            />{" "}
+            <BaseTile title="" body="" />
           </div>
           <p>
             <b>Step: 2 </b>Build registration workflows.
           </p>
-          <div className="card-tile" style={{ border: "1px solid purple" }}>
-            <CardTile /> <CardTile /> <CardTile /> <CardTile />
+          <div className="card-tile tile--2">
+            <CardTile
+              icon="logic-arrow.png"
+              title="Attendee Registration"
+              body="Start by creating a general registration workflow"
+            />{" "}
+            <CardTile
+              icon="logic-arrow.png"
+              title="Attendee Registration"
+              body="Start by creating a general registration workflow"
+            />{" "}
+            <CardTile
+              icon="logic-arrow.png"
+              title="Attendee Registration"
+              body="Start by creating a general registration workflow"
+            />{" "}
+            <CardTile
+              style1="center"
+              icon="plus-icon.png"
+              body="Start by creating a general registration workflow"
+              style2="no-flex"
+            />
           </div>
+
           <p>
             <b>Step: 3 </b>Design attendee experiences.
           </p>
-          <div className="card-tile" style={{ border: "1px solid purple" }}>
-            <CardTile />
+          <div className="card-tile tile--3">
+            <CardTile
+              icon="computer.png"
+              title="Attendee Portal"
+              body="Manage the portal that attendees will see after they’ve register for your event."
+            />
           </div>
           <p>
             <b>Step: 4 </b>Build your exhibitor platform.
           </p>
           <div className="step-four-1">
             <div className="card-tile-2">
-              <CardTile /> <CardTile />
+              <CardTile
+                icon="computer.png"
+                title="Exhibitor Portal"
+                body="Manage the portal that attendees will see after they’ve register for your event."
+              />{" "}
+              <CardTile
+                icon="computer.png"
+                title="Exhibitor List"
+                body="Manage the portal that attendees will see after they’ve register for your event."
+              />
             </div>
           </div>
           <div className="step-four-2">
-            <div className="card-tile">
-              <CardTile /> <CardTile /> <CardTile />
+            <div className="card-tile-3">
+              <CardTile
+                icon="computer.png"
+                title="Exhibitor Logos"
+                body="Manage the portal that attendees will see after they’ve register for your event."
+              />{" "}
+              <CardTile
+                icon="computer.png"
+                title="Exhibitor Tasks"
+                body="Manage the portal that attendees will see after they’ve register for your event."
+              />{" "}
+              <CardTile
+                icon="computer.png"
+                title="Exhibitor Forms"
+                body="Manage the portal that attendees will see after they’ve register for your event."
+              />
             </div>
           </div>
-
-          {/* <StepTwo /> */}
-          {/* <StepThree /> */}
-          {/* <StepFour /> */}
         </main>
       </body>
     </>
   );
 }
 
-// function Header({ children }) {
-//   return <header>{children}</header>;
-// }
-
 function Header() {
   return (
     <>
       <div className="header-row">
         <div className="left-sidebar">
-          <img src={logo} alt="RainFocus Logo" style={{ width: "89px" }} />
+          <img
+            src="images/rain-focus-logo.png"
+            alt="RainFocus Logo"
+            style={{ width: "89px" }}
+          />
         </div>
         <div className="main-content">
           <h1>RainFocus Summit</h1>
@@ -122,17 +180,30 @@ function Header() {
     </>
   );
 }
-
-function CardTile() {
+function BaseTile({ title, body }) {
   return (
     <>
       <div>
-        <div className="card-title">
-          <img src={logo} width="20px" />
-          <h5>Attendee Registration</h5>
+        <div>
+          <b>{title}</b>
         </div>
         <div>
-          <p>Start by creating a general registration workflow</p>
+          <p>{body}</p>
+        </div>
+      </div>
+    </>
+  );
+}
+function CardTile({ icon, title, body, style1, style2 }) {
+  return (
+    <>
+      <div className={style1}>
+        <div className={style2 ? `card-title ${style2}` : "card-title"}>
+          <img src={`images/${icon}`} width="20px" />
+          <h5>{title}</h5>
+        </div>
+        <div>
+          <p>{body}</p>
         </div>
       </div>
     </>
@@ -142,7 +213,7 @@ function CardTile() {
 function StepOne() {
   return (
     <>
-      <div className="step-one" style={{ border: "1px solid purple" }}>
+      <div className="step-one">
         <div>1</div>
         <div>2</div>
         <div>3</div>
