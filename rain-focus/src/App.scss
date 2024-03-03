@@ -10,52 +10,68 @@ body {
 .header-row {
   display: flex;
   flex-wrap: wrap;
+  min-height: 89px;
 }
 .header-row > * {
   width: 100%;
-  /* padding: 1rem; */
 }
-.header-row > .left-sidebar {
-}
-.header-row > .main-content {
-  background-color: #fff;
-}
-.header-row > .right-sidebar {
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 button {
   background: #5c00dc;
   width: 101px;
   height: 33px;
-  padding: 8px, 16px, 8px, 16px;
+  padding: 8px, 16px;
   border-radius: 4px;
   gap: 10px;
   color: white;
-  float: right;
+}
+
+/* Mobile Centering */
+@media (max-width: 768px) {
+  .header-row {
+    justify-content: center;
+    text-align: center; /* Center the content inside items vertically */
+  }
 }
 
 /* tablet breakpoint */
-@media (min-width: 768px) {
-  .header-row > .left-sidebar,
-  .header-row > .right-sidebar {
-    width: 50%;
-  }
-}
+// @media (min-width: 768px) {
+//   .header-row {
+//     justify-content: flex-start;
+//   }
+
+//   .header-row .left-sidebar,
+//   .header-row .right-sidebar {
+//     width: 50%;
+//   }
+//   button {
+//     float: left;
+//   }
+// }
 
 /* desktop breakpoint */
 @media (min-width: 1024px) {
-  .header-row > .left-sidebar {
+  .header-row .left-sidebar {
     /* left sidebar second (first in second row) */
     order: -1;
   }
-  .header-row > .main-content {
+  .header-row .main-content {
     width: 80%;
   }
-  .header-row > .left-sidebar {
+  .header-row .left-sidebar {
     width: 10%;
   }
-  .header-row > .right-sidebar {
+  .header-row .right-sidebar {
     width: 10%;
+  }
+  button {
+    float: right;
   }
 }
 
@@ -147,11 +163,13 @@ p {
 .step-four-1 {
   background-color: gray;
   display: grid;
+  border-radius: 4px 4px 0 0;
 }
 .step-four-1 > div {
   border-color: white;
   background-color: gray;
   color: white;
+  border-radius: 4px 4px 0 0;
 }
 
 .card-tile-2 {
@@ -169,11 +187,13 @@ p {
 .step-four-2 {
   background-color: gray;
   display: grid;
+  border-radius: 0 0 4px 4px;
 }
 .step-four-2 > div {
   border-color: white;
   background-color: gray;
   color: white;
+  border-radius: 0 0 4px 4px;
 }
 .card-tile-3 {
   display: grid;
@@ -184,4 +204,20 @@ p {
   margin: 10px;
   border: 1px solid #999;
   border-radius: 0.2em;
+}
+
+@media (max-width: 992px) {
+  .card-tile-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-tile-2 {
+    grid-template-columns: 1fr;
+  }
+  .step-four-1,
+  .step-four-2 {
+    grid-template-columns: 1fr;
+  }
 }

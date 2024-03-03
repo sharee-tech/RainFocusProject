@@ -1,7 +1,5 @@
-// import logo from "./logo.svg";
-import "./App.css";
-// import logo from "./rain-focus-logo.png";
-// import person from "./person-portal.png";
+// import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
@@ -64,17 +62,17 @@ function App() {
             <BaseTile
               title="General"
               body="Define Attendee types & attributes"
-            />{" "}
+            />
             <BaseTile
               title="Title"
               body="Description that explains the value goes here. Description that
               explains the value goes here."
-            />{" "}
+            />
             <BaseTile
               title="General"
               body="Description that explains the value goes here. Description that
               explains the value goes here."
-            />{" "}
+            />
             <BaseTile title="" body="" />
           </div>
           <p>
@@ -85,17 +83,17 @@ function App() {
               icon="logic-arrow.png"
               title="Attendee Registration"
               body="Start by creating a general registration workflow"
-            />{" "}
+            />
             <CardTile
               icon="logic-arrow.png"
               title="Attendee Registration"
               body="Start by creating a general registration workflow"
-            />{" "}
+            />
             <CardTile
               icon="logic-arrow.png"
               title="Attendee Registration"
               body="Start by creating a general registration workflow"
-            />{" "}
+            />
             <CardTile
               style1="center"
               icon="plus-icon.png"
@@ -123,7 +121,7 @@ function App() {
                 icon="computer.png"
                 title="Exhibitor Portal"
                 body="Manage the portal that attendees will see after they’ve register for your event."
-              />{" "}
+              />
               <CardTile
                 icon="computer.png"
                 title="Exhibitor List"
@@ -137,12 +135,12 @@ function App() {
                 icon="computer.png"
                 title="Exhibitor Logos"
                 body="Manage the portal that attendees will see after they’ve register for your event."
-              />{" "}
+              />
               <CardTile
                 icon="computer.png"
                 title="Exhibitor Tasks"
                 body="Manage the portal that attendees will see after they’ve register for your event."
-              />{" "}
+              />
               <CardTile
                 icon="computer.png"
                 title="Exhibitor Forms"

@@ -6,28 +6,27 @@
 body {
   padding: 2%;
 }
+
 /* -------------------- Header --------------------*/
 .header-row {
   display: flex;
   flex-wrap: wrap;
-}
-.header-row > * {
-  width: 100%;
-  /* padding: 1rem; */
-}
-.header-row > .left-sidebar {
-}
-.header-row > .main-content {
-  background-color: #fff;
-}
-.header-row > .right-sidebar {
+
+  > * {
+    width: 100%;
+    // padding: 1rem;
+  }
+
+  > .main-content {
+    background-color: #fff;
+  }
 }
 
 button {
   background: #5c00dc;
   width: 101px;
   height: 33px;
-  padding: 8px, 16px, 8px, 16px;
+  padding: 8px 16px;
   border-radius: 4px;
   gap: 10px;
   color: white;
@@ -65,29 +64,28 @@ button {
   flex-wrap: wrap;
   border: 1px solid gray;
   border-radius: 0.2em;
+
+  > div {
+    flex: 22%;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 992px) {
+    > div {
+      flex: 46%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    min-height: fit-content;
+
+    > div {
+      flex: 100%;
+    }
+  }
 }
 
-.step-one > div {
-  flex: 22%;
-  padding: 10px;
-  margin: 10px;
-}
-@media screen and (max-width: 992px) {
-  .step-one > div {
-    flex: 46%;
-  }
-}
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-/* see this link: https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_flex */
-@media screen and (max-width: 600px) {
-  .step-one {
-    min-height: fit-content;
-  }
-  .step-one > div {
-    /* flex-direction: column; */
-    flex: 100%;
-  }
-}
 /* -------------------- CardTile --------------------*/
 .center {
   text-align: center;
@@ -99,16 +97,16 @@ button {
 
 .card-tile {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .card-title {
   display: flex;
-}
 
-.card-title.no-flex {
-  display: inline;
+  &.no-flex {
+    display: inline;
+  }
 }
 
 .flex {
@@ -121,7 +119,6 @@ button {
 
 .card-tile > div {
   padding: 10px;
-  /* margin: 10px; */
   border: 1px solid #999;
   border-radius: 0.2em;
 }
@@ -143,45 +140,40 @@ p {
 /* -------------------- Step 3: --------------------*/
 .card-tile.tile--3 {
 }
+
 /* -------------------- Step 4: --------------------*/
-.step-four-1 {
+.step-four-1,
+.step-four-2 {
   background-color: gray;
   display: grid;
-}
-.step-four-1 > div {
-  border-color: white;
-  background-color: gray;
-  color: white;
+
+  > div {
+    border-color: white;
+    background-color: gray;
+    color: white;
+  }
 }
 
 .card-tile-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  > div {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #999;
+    border-radius: 0.2em;
+  }
 }
 
-.card-tile-2 > div {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #999;
-  border-radius: 0.2em;
-}
-
-.step-four-2 {
-  background-color: gray;
-  display: grid;
-}
-.step-four-2 > div {
-  border-color: white;
-  background-color: gray;
-  color: white;
-}
 .card-tile-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.card-tile-3 > div {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #999;
-  border-radius: 0.2em;
+  grid-template-columns: repeat(3, 1fr);
+
+  > div {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #999;
+    border-radius: 0.2em;
+  }
 }
