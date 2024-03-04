@@ -8,7 +8,7 @@
 }
 
 body {
-  padding: 2%;
+  padding: 4%;
 }
 
 $color-primary: #000000;
@@ -56,6 +56,7 @@ h2 {
   font-size: 24px;
   font-weight: $semibold-weight;
   line-height: 29px;
+  margin-bottom: 8px;
 }
 
 h3 {
@@ -63,6 +64,8 @@ h3 {
   font-size: 20px;
   font-weight: $semibold-weight;
   line-height: 24px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 h4 {
@@ -77,6 +80,7 @@ h5 {
   font-size: 14px;
   font-weight: $semibold-weight;
   line-height: 16.94px;
+  margin-bottom: 8px;
 }
 
 h6 {
@@ -84,6 +88,7 @@ h6 {
   font-size: 13px;
   font-weight: $bold-weight;
   line-height: 14.52px;
+  margin-bottom: 4px;
 }
 
 p {
@@ -91,6 +96,7 @@ p {
   font-size: 12px;
   font-weight: $regular-weight;
   line-height: 14.52px;
+  margin-top: 5px;
 }
 
 hr {
@@ -99,16 +105,17 @@ hr {
 }
 
 /* -------------------- Header --------------------*/
-.header-row {
+.header {
   display: flex;
-  flex-wrap: wrap;
-  min-height: 89px;
-}
-.header-row > * {
-  width: 100%;
+  justify-content: space-between;
 }
 
-.main-content {
+.event-brand {
+  display: flex;
+}
+
+.details {
+  margin-left: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,6 +129,7 @@ button {
   border-radius: 4px;
   gap: 10px;
   color: $color-white;
+  float: right;
   font-family: "Inter";
   font-size: 14px;
   font-weight: $semibold-weight;
@@ -133,76 +141,73 @@ button {
   }
 }
 
-/* Mobile Centering */
 @media (max-width: 768px) {
-  .header-row {
-    justify-content: center;
-    text-align: center; /* Center the content inside items vertically */
+  .header {
+    flex-direction: column;
+    gap: 2em;
   }
 }
+/* -------------------- Header Two --------------------- */
+.header-two {
+  margin: 24px 0;
+}
 
-/* tablet breakpoint */
-// @media (min-width: 768px) {
-//   .header-row {
-//     justify-content: flex-start;
-//   }
+/* -------------------- Person Portal --------------------- */
 
-//   .header-row .left-sidebar,
-//   .header-row .right-sidebar {
-//     width: 50%;
-//   }
-//   button {
-//     float: left;
-//   }
-// }
+.person-portal {
+  margin: 24px 0;
 
-/* desktop breakpoint */
-@media (min-width: 1024px) {
-  .header-row .left-sidebar {
-    /* left sidebar second (first in second row) */
-    order: -1;
+  div {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
   }
-  .header-row .main-content {
-    width: 80%;
-  }
-  .header-row .left-sidebar {
-    width: 10%;
-  }
-  .header-row .right-sidebar {
-    width: 10%;
-  }
-  button {
-    float: right;
+
+  img {
+    width: 35px;
+    display: inline-block;
   }
 }
 
 /* -------------------- Step 1 --------------------- */
 .step-one {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid $color-gray;
-  border-radius: 0.2em;
+  margin-bottom: 24px;
 }
 
-.step-one > div {
-  flex: 22%;
-  padding: 10px;
-  margin: 10px;
+.tiles {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  border: 1px solid $color-gray;
+  border-radius: 4px;
+  min-height: 116px;
+  padding: 8px;
+
+  > div {
+    flex: 22%;
+    padding: 10px;
+    margin: 10px;
+  }
 }
+
 @media screen and (max-width: 992px) {
-  .step-one > div {
+  .tiles > div {
     flex: 46%;
   }
 }
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 /* see this link: https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_flex */
 @media screen and (max-width: 600px) {
-  .step-one {
+  .tiles {
     min-height: fit-content;
-  }
-  .step-one > div {
-    /* flex-direction: column; */
-    flex: 100%;
+
+    > div {
+      /* flex-direction: column; */
+      flex: 100%;
+    }
   }
 }
 /* -------------------- CardTile --------------------*/
@@ -210,7 +215,14 @@ button {
   text-align: center;
 }
 
-.no-flex {
+.card-title {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.card-title.no-flex {
   display: inline;
 }
 
@@ -218,106 +230,89 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+
+  > div {
+    padding: 24px 32px 24px 32px;
+    /* margin: 10px; */
+    border: 1px solid $color-gray;
+    border-radius: 4px;
+    min-height: 122px;
+
+    &:not(.center) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+  }
 }
 
-.card-title {
-  display: flex;
-}
-
-.card-title.no-flex {
-  display: inline;
-}
-
-.flex {
-  display: flex;
-}
-
-.grid {
-  display: grid;
-}
-
-.card-tile > div {
-  padding: 10px;
-  /* margin: 10px; */
-  border: 1px solid $color-gray;
-  border-radius: 0.2em;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .card-tile {
     grid-template-columns: 1fr;
   }
 }
 
 /* -------------------- Step 2: --------------------*/
-.card-tile.tile--3 {
+.step-two {
+  margin-bottom: 24px;
 }
 
 /* -------------------- Step 3: --------------------*/
-.card-tile.tile--3 {
+.step-three {
+  margin-bottom: 24px;
 }
 /* -------------------- Step 4: --------------------*/
-.step-four-1 {
+.step-four-tiles {
   background-color: $color-background;
+  border-radius: 4px;
   display: grid;
-  border-radius: 4px 4px 0 0;
-}
-.step-four-1 > div {
-  border-color: $color-gray;
-  background-color: $color-background;
-  color: $color-white;
-  border-radius: 4px 4px 0 0;
+  padding: 4px;
 }
 
-.card-tile-2 {
+.row-one .--tile {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 122px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: $color-white;
+    padding: 24px 32px 24px 32px;
+    margin: 10px;
+    border: 1px solid $color-gray;
+    border-radius: 4px;
+  }
 }
 
-.card-tile-2 > div {
-  border-color: $color-gray;
-  background-color: $color-background;
-  color: $color-white;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid $color-gray;
-  border-radius: 0.2em;
-}
-
-.step-four-2 {
-  background-color: $color-background;
-  display: grid;
-  border-radius: 0 0 4px 4px;
-}
-.step-four-2 > div {
-  border-color: $color-white;
-  background-color: $color-background;
-  color: $color-white;
-  border-radius: 0 0 4px 4px;
-}
-.card-tile-3 {
+.row-two .--tile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-.card-tile-3 > div {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid $color-gray;
-  border-radius: 0.2em;
+  min-height: 122px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: $color-white;
+    padding: 24px 32px 24px 32px;
+    margin: 10px;
+    border: 1px solid $color-gray;
+    border-radius: 4px;
+  }
 }
 
 @media (max-width: 992px) {
-  .card-tile-3 {
+  .row-two .--tile {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .card-tile-2 {
-    grid-template-columns: 1fr;
-  }
-  .step-four-1,
-  .step-four-2 {
+  .row-one .--tile {
     grid-template-columns: 1fr;
   }
 }
