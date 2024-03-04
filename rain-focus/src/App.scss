@@ -88,7 +88,7 @@ hr {
 }
 
 .details {
-  margin-left: 8px;
+  margin-left: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,6 +120,22 @@ button {
     gap: 2em;
   }
 }
+
+@media (max-width: 430px) {
+  .event-brand img {
+    height: 100%;
+  }
+  .details {
+    h1 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+    h4 {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
 /* -------------------- Header Two --------------------- */
 .header-two {
   margin: 24px 0;
@@ -145,8 +161,11 @@ button {
 }
 
 /* -------------------- CardTile --------------------*/
-.center {
-  text-align: center;
+.tile-plus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-title {
@@ -154,10 +173,6 @@ button {
   align-items: flex-end;
   gap: 5px;
   margin-bottom: 5px;
-
-  &.no-flex {
-    display: inline;
-  }
 }
 
 .card-tile {
@@ -171,7 +186,7 @@ button {
     @include border;
     min-height: 122px;
 
-    &:not(.center) {
+    &:not(.tile-plus) {
       display: flex;
       flex-direction: column;
       justify-content: center;

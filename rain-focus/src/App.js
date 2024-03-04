@@ -1,4 +1,3 @@
-// import "./App.css";
 import { useState } from "react";
 import "./App.scss";
 
@@ -72,7 +71,7 @@ function App() {
               explains the value goes here."
             />
             <BaseTile
-              title="General"
+              title="Title"
               body="Description that explains the value goes here. Description that
               explains the value goes here."
             />
@@ -85,11 +84,9 @@ function App() {
           </h5>
           <div className="card-tile tile--2">
             <StepTwo cards={cards} />
-            <CardTile
-              style1="center"
+            <CardTilePlus
               icon="plus-icon.png"
-              body="Start by creating a general registration workflow"
-              style2="no-flex"
+              body="Add Registration Workflow"
               handleClick={handleClick}
             />
           </div>
@@ -164,11 +161,14 @@ function Header() {
             </h4>
           </div>
         </div>
-        <button>Edit Event</button>
+        <button onClick={() => alert("Start editing event now...")}>
+          Edit Event
+        </button>
       </div>
     </>
   );
 }
+
 function BaseTile({ title, body }) {
   return (
     <>
@@ -183,27 +183,35 @@ function BaseTile({ title, body }) {
     </>
   );
 }
-function CardTile({ icon, title, body, style1, style2, handleClick }) {
+
+function CardTile({ icon, title, body }) {
   return (
     <>
-      <div className={style1}>
-        <div className={style2 ? `card-title ${style2}` : "card-title"}>
-          {style2 ? (
-            <img
-              src={`images/${icon}`}
-              alt="icon"
-              width="20px"
-              onClick={handleClick}
-              style={{ cursor: "pointer" }}
-            />
-          ) : (
-            <img src={`images/${icon}`} alt="icon" width="20px" />
-          )}
+      <div>
+        <div className="card-title">
+          <img src={`images/${icon}`} alt="icon" width="24px" />
           <h6>{title}</h6>
         </div>
         <div>
           <p>{body}</p>
         </div>
+      </div>
+    </>
+  );
+}
+
+function CardTilePlus({ icon, body, handleClick }) {
+  return (
+    <>
+      <div className="tile-plus">
+        <img
+          src={`images/${icon}`}
+          alt="icon"
+          width="24px"
+          onClick={handleClick}
+          style={{ cursor: "pointer" }}
+        />
+        <p>{body}</p>
       </div>
     </>
   );
