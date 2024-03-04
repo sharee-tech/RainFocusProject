@@ -243,7 +243,6 @@ button {
 /* -------------------- Step 4: --------------------*/
 .step-four-tiles {
   background-color: $color-background;
-  @include border;
   display: grid;
   padding: 24px;
 }
