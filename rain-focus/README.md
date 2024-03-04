@@ -1,6 +1,6 @@
 # RainFocus Project
 
-Single page application using React and SASS compiled CSS.
+Responsive single-page application using React and SASS compiled CSS.
 
 ## Description
 
@@ -8,7 +8,7 @@ Mock-up of RainFocus UI Challenge, built using create-react-app and SASS compile
 
 ## Getting Started
 
-### Instruction
+### Instructions
 
 * Extract .zip folder
 * Navigate to "build" directory
