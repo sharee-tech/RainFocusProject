@@ -1,7 +1,3 @@
-// @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
-
 * {
   margin: 0;
   box-sizing: border-box;
@@ -27,19 +23,6 @@ $bold-weight: 700;
   padding: 24px 32px 24px 32px;
 }
 
-@mixin flex-style(
-  $wrap: nowrap,
-  $dir: row,
-  $justify: flex-start,
-  $align: normal
-) {
-  display: flex;
-  flex-wrap: $wrap;
-  flex-direction: $dir;
-  justify-content: $justify;
-  align-items: $align;
-}
-
 @mixin section-margin-bottom {
   margin-bottom: 24px;
 }
@@ -47,48 +30,6 @@ $bold-weight: 700;
 @mixin border {
   border-radius: 4px;
 }
-
-// @mixin font-face($weight, $url) {
-//   font-family: "Inter";
-//   font-weight: $weight;
-//   font-style: normal;
-//   src: $url;
-// }
-
-// @font-face {
-//   @include font-face(
-//     $regular-weight,
-//     $url: url("https://fonts.googleapis.com/css2?family=Inter&display=swap")
-//   );
-//   // font-family: "Inter";
-//   // font-weight: $regular-weight;
-//   // font-style: normal;
-//   // src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap");;;;;;;;;;;;;;;;;;;;;;;;;
-// }
-
-// @font-face {
-//   @include font-face(
-//     $semibold-weight,
-//     $url:
-//       url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap")
-//   );
-//   // font-family: "Inter";
-//   // font-weight: $semibold-weight;
-//   // font-style: normal;
-//   // src: url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");;;;;;;;;;;;;;;;;;;;;;;;;
-// }
-
-// @font-face {
-//   @include font-face(
-//     $bold-weight,
-//     $url:
-//       url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap")
-//   );
-//   // font-family: "Inter";
-//   // font-weight: $bold-weight;
-//   // font-style: normal;
-//   // src: url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");;;;;;;;;;;;;;;;;;;;;;;;;
-// }
 
 @mixin font($weight, $size, $height) {
   font-family: "Inter";
@@ -99,63 +40,35 @@ $bold-weight: 700;
 
 h1 {
   @include font($weight: $semibold-weight, $size: 32px, $height: 39px);
-  // font-family: "Inter";
-  // font-weight: $semibold-weight;
-  // font-size: 32px;
-  // line-height: 39px;
 }
 
 h2 {
   @include font($weight: $semibold-weight, $size: 24px, $height: 29px);
-  // font-family: "Inter";
-  // font-size: 24px;
-  // font-weight: $semibold-weight;
-  // line-height: 29px;
   margin-bottom: 8px;
 }
 
 h3 {
   @include font($weight: $semibold-weight, $size: 20px, $height: 24px);
-  // font-family: "Inter";
-  // font-size: 20px;
-  // font-weight: $semibold-weight;
-  // line-height: 24px;
   display: inline-block;
   vertical-align: middle;
 }
 
 h4 {
   @include font($weight: $regular-weight, $size: 16px, $height: 19.36px);
-  // font-family: "Inter";
-  // font-weight: $regular-weight;
-  // font-size: 16px;
-  // line-height: 19.36px;
 }
 
 h5 {
   @include font($weight: $regular-weight, $size: 14px, $height: 16.94px);
-  // font-family: "Inter";
-  // font-size: 14px;
-  // font-weight: $regular-weight;
-  // line-height: 16.94px;
   margin-bottom: 8px;
 }
 
 h6 {
   @include font($weight: $bold-weight, $size: 13px, $height: 14.52px);
-  // font-family: "Inter";
-  // font-size: 13px;
-  // font-weight: $bold-weight;
-  // line-height: 14.52px;
   margin-bottom: 4px;
 }
 
 p {
   @include font($weight: $regular-weight, $size: 12px, $height: 14.52px);
-  // font-family: "Inter";
-  // font-size: 12px;
-  // font-weight: $regular-weight;
-  // line-height: 14.52px;
   margin-top: 5px;
 }
 
@@ -166,22 +79,19 @@ hr {
 
 /* -------------------- Header --------------------*/
 .header {
-  @include flex-style($justify: space-between);
-  // display: flex;
-  // justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .event-brand {
-  @include flex-style();
-  // display: flex;
+  display: flex;
 }
 
 .details {
   margin-left: 8px;
-  @include flex-style($dir: column, $justify: space-between);
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 button {
@@ -190,7 +100,6 @@ button {
   height: 33px;
   padding: 8px, 16px;
   @include border;
-  // border-radius: 4px;
   gap: 10px;
   color: $color-white;
   float: right;
@@ -235,20 +144,61 @@ button {
   }
 }
 
+/* -------------------- CardTile --------------------*/
+.center {
+  text-align: center;
+}
+
+.card-title {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  margin-bottom: 5px;
+
+  &.no-flex {
+    display: inline;
+  }
+}
+
+.card-tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+
+  > div {
+    @include tile-padding;
+    border: 1px solid $color-gray;
+    @include border;
+    min-height: 122px;
+
+    &:not(.center) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-tile {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* -------------------- Step 1 --------------------- */
-.step-one {
+.step-one,
+.step-two,
+.step-three {
   @include section-margin-bottom;
-  // margin-bottom: 24px;
 }
 
 .tiles {
-  @include flex-style($wrap: wrap, $align: baseline);
-  // display: flex;
-  // align-items: baseline;
-  // flex-wrap: wrap;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
   border: 1px solid $color-gray;
   @include border;
-  // border-radius: 4px;
   min-height: 116px;
   padding: 8px;
 
@@ -264,83 +214,21 @@ button {
     flex: 46%;
   }
 }
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-/* see this link: https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_flex */
+
 @media screen and (max-width: 600px) {
   .tiles {
     min-height: fit-content;
 
     > div {
-      /* flex-direction: column; */
       flex: 100%;
     }
   }
 }
-/* -------------------- CardTile --------------------*/
-.center {
-  text-align: center;
-}
 
-.card-title {
-  @include flex-style($align: flex-end);
-  // display: flex;
-  // align-items: flex-end;
-  gap: 5px;
-  margin-bottom: 5px;
-
-  &.no-flex {
-    display: inline;
-  }
-}
-
-// .card-title.no-flex {
-//   display: inline;
-// }
-
-.card-tile {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-
-  > div {
-    @include tile-padding;
-    border: 1px solid $color-gray;
-    @include border;
-    // border-radius: 4px;
-    min-height: 122px;
-
-    &:not(.center) {
-      @include flex-style($dir: column, $justify: center, $align: flex-start);
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: flex-start;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card-tile {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* -------------------- Step 2: --------------------*/
-.step-two {
-  @include section-margin-bottom;
-  // margin-bottom: 24px;
-}
-
-/* -------------------- Step 3: --------------------*/
-.step-three {
-  @include section-margin-bottom;
-  // margin-bottom: 24px;
-}
 /* -------------------- Step 4: --------------------*/
 .step-four-tiles {
   background-color: $color-background;
   @include border;
-  // border-radius: 4px;
   display: grid;
   padding: 24px;
 }
@@ -351,18 +239,15 @@ button {
   min-height: 122px;
 
   > div {
-    @include flex-style($dir: column, $justify: center, $align: flex-start);
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     color: $color-white;
     @include tile-padding;
-    // padding: 24px 32px 24px 32px;
     margin: 12px;
     border: 1px solid $color-gray;
     @include border;
-    // border-radius: 4px;
   }
 }
 
@@ -371,18 +256,15 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   min-height: 122px;
   > div {
-    @include flex-style($dir: column, $justify: center, $align: flex-start);
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     color: $color-white;
     @include tile-padding();
-    // padding: 24px 32px 24px 32px;
     margin: 12px;
     border: 1px solid $color-gray;
     @include border;
-    // border-radius: 4px;
   }
 }
 
