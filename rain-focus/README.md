@@ -14,12 +14,12 @@ Mock-up of RainFocus UI Challenge, built using create-react-app and SASS compile
 * Navigate to "build" directory
 * Locate and open index.html file in browser of choice
 
-## Features
+### Features
 
 Try Interactive Elements: 
 * Click on "Edit Event" button
 * Click on the "plus" icon in the "Step 2" fourth tile
 
-## Author
+### Author
 
 Sharee Thompson
