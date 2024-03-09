@@ -73,8 +73,9 @@ p {
 }
 
 hr {
-  height: 1px;
-  background-color: $color-line;
+  // height: 1px;
+  // background-color: $color-line;
+  border: 0.5px solid $color-line;
 }
 
 /* -------------------- Header --------------------*/
