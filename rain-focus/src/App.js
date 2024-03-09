@@ -36,6 +36,11 @@ function App() {
       },
     ]);
   }
+
+  function handleClickMinus() {
+    setCards(cards.filter((card) => card.id !== cards.length));
+  }
+
   return (
     <>
       <Header />
@@ -88,6 +93,10 @@ function App() {
               icon="plus-icon.png"
               body="Add Registration Workflow"
               handleClick={handleClick}
+            />
+            <CardTileMinus
+              body="Remove Registration Workflow"
+              handleClickMinus={handleClickMinus}
             />
           </div>
         </section>
@@ -206,7 +215,7 @@ function CardTilePlus({ icon, body, handleClick }) {
       <div className="tile-plus">
         <img
           src={`images/${icon}`}
-          alt="icon"
+          alt="plus icon"
           width="24px"
           onClick={handleClick}
           style={{ cursor: "pointer" }}
@@ -214,6 +223,22 @@ function CardTilePlus({ icon, body, handleClick }) {
         <p>{body}</p>
       </div>
     </>
+  );
+}
+
+function CardTileMinus({ body, handleClickMinus }) {
+  return (
+    <div className="tile-plus">
+      <span
+        onClick={handleClickMinus}
+        style={{ cursor: "pointer" }}
+        width="24px"
+        alt="minus icon"
+      >
+        ➖
+      </span>
+      <p>{body}</p>
+    </div>
   );
 }
 
