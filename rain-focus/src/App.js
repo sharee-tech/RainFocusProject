@@ -38,8 +38,8 @@ function App() {
   }
   return (
     <>
-      <Header />
       <main>
+        <Header />
         <section className="header-two">
           <h2>Event setup guide</h2>
           <h4>
