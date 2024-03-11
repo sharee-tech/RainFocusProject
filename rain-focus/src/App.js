@@ -36,6 +36,21 @@ function App() {
       },
     ]);
   }
+
+  const btnEl = document.querySelector(".btn");
+  console.log(btnEl);
+  btnEl.addEventListener("click", function() {
+    alert("Start editing event now...");
+  });
+
+  const cardTileEl = document.querySelector(".card-container");
+  const tilePlusEl = document.querySelector(".tile-plus");
+  const sectionTwo = document.querySelector(".tile--2");
+  tilePlusEl.addEventListener("click", function() {
+    cardTileEl.innerHTML = "We changed this element";
+    sectionTwo.append(tilePlusEl);
+  });
+
   return (
     <>
       <Header />
@@ -161,9 +176,10 @@ function Header() {
             </h4>
           </div>
         </div>
-        <button onClick={() => alert("Start editing event now...")}>
+        {/* <button onClick={() => alert("Start editing event now...")}>
           Edit Event
-        </button>
+        </button> */}
+        <button className="btn">Edit Event</button>
       </div>
     </>
   );
@@ -187,7 +203,7 @@ function BaseTile({ title, body }) {
 function CardTile({ icon, title, body }) {
   return (
     <>
-      <div>
+      <div className="card-container">
         <div className="card-title">
           <img src={`images/${icon}`} alt="icon" width="24px" />
           <h6>{title}</h6>
