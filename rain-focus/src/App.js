@@ -25,7 +25,7 @@ const origData = [
 function App() {
   const [cards, setCards] = useState(origData);
 
-  function handleClick() {
+  function handleAddTile() {
     setCards([
       ...cards,
       {
@@ -36,14 +36,21 @@ function App() {
       },
     ]);
   }
+  function handleRefresh() {
+    setCards(origData);
+  }
   return (
     <>
-      <Header />
       <main>
-        <HeaderTwo />
+        <Header />
+        <SubHeader />
         <PersonPortal />
         <StepOne />
-        <StepTwo cards={cards} handleClick={handleClick} />
+        <StepTwo
+          cards={cards}
+          onAddTile={handleAddTile}
+          onRefresh={handleRefresh}
+        />
         <StepThree />
         <StepFour />
       </main>
@@ -70,7 +77,7 @@ function Header() {
   );
 }
 
-function HeaderTwo() {
+function SubHeader() {
   return (
     <section className="header-two">
       <h2>Event setup guide</h2>
@@ -127,7 +134,7 @@ function CardTile({ icon, title, body }) {
   );
 }
 
-function CardTilePlus({ icon, body, handleClick }) {
+function CardTilePlus({ icon, body, onAddTile }) {
   return (
     <>
       <div className="tile-plus">
@@ -135,7 +142,7 @@ function CardTilePlus({ icon, body, handleClick }) {
           src={`images/${icon}`}
           alt="icon"
           width="24px"
-          onClick={handleClick}
+          onClick={onAddTile}
           style={{ cursor: "pointer" }}
         />
         <p>{body}</p>
@@ -168,18 +175,23 @@ function StepOne() {
   );
 }
 
-function StepTwo({ cards, handleClick }) {
+function StepTwo({ cards, onAddTile, onRefresh }) {
   return (
     <section className="step-two">
-      <h5>
-        <b>Step: 2 </b>Build registration workflows.
-      </h5>
+      <div style={{ display: "flex" }}>
+        <h5>
+          <b>Step: 2 </b>Build registration workflows.
+        </h5>
+        <span className="refresh" onClick={onRefresh}>
+          ⟳
+        </span>
+      </div>
       <div className="card-tile tile--2">
         <StepTwoCards cards={cards} />
         <CardTilePlus
           icon="plus-icon.png"
           body="Add Registration Workflow"
-          handleClick={handleClick}
+          onAddTile={onAddTile}
         />
       </div>
     </section>

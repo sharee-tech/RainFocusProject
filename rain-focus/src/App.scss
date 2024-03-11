@@ -240,6 +240,17 @@ button {
   }
 }
 
+/* -------------------- Step 2: --------------------*/
+.refresh {
+  cursor: pointer;
+  padding-left: 10px;
+  margin: 0px !important;
+  display: inline !important;
+
+  height: auto;
+  width: 50px;
+}
+
 /* -------------------- Step 4: --------------------*/
 .step-four-tiles {
   background-color: $color-background;
